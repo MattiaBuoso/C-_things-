@@ -1,0 +1,87 @@
+class Stack
+{
+   private int[] stack = new int[10];
+   private int stackPointer = -1;
+
+    public Stack() 
+    {
+        stack = new int[10];
+    }
+
+    /// <summary>
+    /// Peek the first element in a given array (doesn't remove it)
+    /// </summary>
+    /// <returns> Return the values of first position in teh array</returns>
+    /// <param name="int[] array, int stackPointer"></param>
+    private int PeekElement(int[] satck, int stackPointer)
+    {
+        return stack[stackPointer++];
+    }
+
+    /// <summary>
+    /// Push elements in the first position of a given array
+    /// </summary>
+    /// <returns>returns new array with the pushed number on top</returns>
+    /// <param name="int[] array"></param>
+    private void PushElement(int[] stack, int stackPointer)
+    {
+        int numberToPush;
+        numberToPush = Convert.ToInt32(Console.ReadLine());
+       
+        int[] nS = new int[stack.Length+1];
+        nS[0] = numberToPush;
+        stackPointer= stackPointer = 0;
+
+        for(int i = 1; i< nS.Length; i++) 
+        {
+            nS[i] = stack[stackPointer];
+            stackPointer++;
+        }
+    }
+
+    /// <summary>
+    /// Get the numbers of elements in stack
+    /// </summary>
+    /// <returns>numbers contained in stack</returns>
+    private int GetElementsNumber(int[] stack)
+    {
+        return stack.Length;
+    }
+
+    /// <summary>
+    /// Reset the stack
+    /// </summary>
+    /// <param name="ref array, int stackPointer "></param>
+    /// <returns> return empty stack and pointer set to -1</returns>
+    private int StackReset(ref int[] stack, int stackPointer)
+    {
+        stack = Array.Empty<int>();
+        return stackPointer = -1;
+    }
+
+    /// <summary>
+    /// Gets you the value of the first array position
+    /// </summary>
+    /// <returns></returns>
+    /// <param name="int[] array, int stackPointer "></param>
+    private int PopValues(int[] stack)
+    {
+        return stack[stackPointer++];
+    }
+
+    /// <summary>
+    /// Print the stack values
+    /// </summary>
+    /// <param name="int[] array"></param>
+    private void PrintValues(int[] stack)
+    {
+        foreach(int v in stack)
+        {
+            Console.WriteLine(v);
+        }
+    }
+}
+
+/*
+non per visuale per adesso :(
+*/
